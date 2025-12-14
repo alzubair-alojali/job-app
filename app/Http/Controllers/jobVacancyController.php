@@ -55,10 +55,10 @@ class jobVacancyController extends Controller
                     'email' => auth()->user()->email,
                     'phone' => $request->input('phone'),
                 ]),
-                'education' => $extractedinfo['education'],
-                'experience' => $extractedinfo['experience'],
-                'skills' => $extractedinfo['skills'],
-                'summary' => $extractedinfo['summary'],
+                'education' => json_encode($extractedinfo['education']),
+                'experience' => json_encode($extractedinfo['experience']),
+                'skills' => json_encode($extractedinfo['skills']),
+                'summary' => json_encode($extractedinfo['summary']),
             ]);
 
             $resumeId = $resume->id;
