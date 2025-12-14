@@ -21,7 +21,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
 # Install PHP extensions
 RUN install-php-extensions \
     pdo_mysql \
-    mysqli
+    mysqli \
+    pdo_pgsql \
+    pgsql
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
